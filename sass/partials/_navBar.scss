@@ -1,0 +1,175 @@
+$navColors: #053225;
+$highlight: #6C983F;
+
+header {
+    background-color: white;
+    text-align: center;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+}
+
+.active {
+    border-bottom: 5px outset $highlight;
+
+
+}
+
+.uzuri {
+    color: $highlight;
+}
+
+.logo {
+    margin: 0;
+}
+
+.nav-toggle:checked ~ nav {
+    transform: scale(1, 1);
+
+    a {
+        opacity: 1;
+        transition: opacity 250ms ease-in-out 250ms;
+
+    }
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background: black;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+}
+
+.nav-toggle-label span::before {
+    bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+    top: 7px;
+}
+
+
+.navigation {
+    position: absolute;
+    text-align: center;
+    top: 100%;
+    left: 0;
+    font-family: 'Dosis', sans-serif;
+    font-size: 200%;
+    background-color: white;
+    width: 100%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+
+
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    li {
+        margin-bottom: 1em;
+        margin-left: 1em;
+    }
+
+    a {
+        text-decoration: none;
+        color: $navColors;
+        font-weight: 600;
+        text-transform: uppercase;
+        opacity: 0;
+        transition: opacity 150ms ease-in-out;
+    }
+
+    a:hover {
+        color: $highlight;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .nav-toggle-label {
+        display: none;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+    }
+
+    .logo {
+        //        grid-column: 2 / 3;
+        justify-content: flex-start;
+    }
+
+    .navigation {
+        all: unset;
+        grid-column: 3 / 4;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-family: 'Dosis', sans-serif;
+        font-size: 150%;
+
+        ul {
+            display: flex;
+        }
+
+        li {
+            margin-left: 3em;
+            margin-bottom: 0;
+        }
+
+        a {
+            opacity: 1;
+            position: relative;
+
+        }
+
+    }
+
+    nav a::before {
+        content: '';
+        display: block;
+        height: 5px;
+        background: black;
+        position: absolute;
+        top: -.75em;
+        left: 0;
+        right: 0;
+        transform: scale(0, 1);
+        transform-origin: left;
+        transition: transform ease-in-out 250ms;
+    }
+
+    nav a:hover::before {
+        transform: scale(1, 1);
+    }
+
+}

@@ -1,0 +1,22 @@
+@mixin bodyTile {
+    justify-content: center;
+    text-align: center;
+    font-family: 'Expletus Sans', cursive;
+    font-weight: bold;
+    font-size: 50px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    ;
+}
+
+
+@mixin Allimg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+@mixin Links {
+    text-decoration: none;
+    color: red;
+}

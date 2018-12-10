@@ -1,0 +1,36 @@
+.banner {
+    background-image: url('../img/bgUzuri.png');
+    height: 110vh;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 1px solid $highlight;
+    background-position: center;
+    background-repeat: no-repeat;
+
+
+}
+
+
+
+.main-banner {
+    height: 700px;
+    width: 700px;
+}
+
+.main-title {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Expletus Sans', cursive;
+    font-size: 22px;
+    font-weight: bold;
+
+}
+
+.break {
+    font-family: 'Dosis', sans-serif;
+    text-transform: uppercase;
+    font-weight: 100;
+}
