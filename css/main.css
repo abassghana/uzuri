@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Dosis|Expletus+Sans");
 header {
   background-color: white;
@@ -327,6 +328,47 @@ form .submit {
     left: -10%;
   }
 }
+.thumbnail {
+  max-width: 40%;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.small {
+  font-size: 0.8em;
+}
+
+/** LIGHTBOX MARKUP **/
+.lightbox {
+  /** Default lightbox to hidden */
+  display: none;
+  /** Position and style */
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox img {
+  /** Pad the lightbox image */
+  max-width: 90%;
+  max-height: 80%;
+  margin-top: 2%;
+}
+
+.lightbox:target {
+  /** Remove default browser outline */
+  outline: none;
+  /** Unhide lightbox **/
+  display: block;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -346,6 +388,28 @@ label {
   display: none;
   width: 26px;
   float: right;
+}
+
+blockquote {
+  background: #6C983F;
+  border-left: 10px solid #053225;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "“" "”" "‘" "’";
+  color: white;
+}
+
+blockquote:before {
+  color: #053225;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+blockquote p {
+  display: inline;
 }
 
 .container {
@@ -370,9 +434,22 @@ label {
   width: 30%;
 }
 
+.gallery-title {
+  text-align: center;
+  text-decoration: underline overline wavy #6C983F;
+  margin-bottom: 2%;
+}
+
 .half {
   margin-left: 2%;
   width: 68%;
+  text-align: center;
+}
+
+.bigBox {
+  width: 60%;
+  margin-right: 2%;
+  text-align: center;
 }
 
 .head {
@@ -433,9 +510,21 @@ label {
   text-align: center;
   font-family: 'Expletus Sans', cursive;
   font-weight: bold;
-  font-size: 50px;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  font-size: 30px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.title {
+  justify-content: center;
+  text-align: center;
+  font-family: 'Expletus Sans', cursive;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .body-content {
@@ -511,7 +600,7 @@ label {
 
 .link {
   text-decoration: none;
-  color: red;
+  color: #053225;
 }
 
 @media screen and (max-width: 768px) {
@@ -522,6 +611,10 @@ label {
 
   .half {
     width: 80%;
+  }
+
+  .bigBox {
+    width: 100%;
   }
 }
 @media screen and (max-width: 768px) {
@@ -556,8 +649,31 @@ label {
     font-size: 20px;
   }
 
+  .box {
+    width: 100%;
+  }
+
   .three {
     width: 100%;
+  }
+
+  .bigBox {
+    width: 100%;
+  }
+
+  .third {
+    width: 100%;
+  }
+
+  #gallery {
+    margin: auto;
+    text-align: center;
+  }
+
+  .allimg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 @media screen and (max-width: 320px) {
@@ -574,6 +690,17 @@ label {
 
   .body-title {
     font-size: 15px;
+  }
+
+  #gallery {
+    margin: auto;
+    text-align: center;
+  }
+
+  .allimg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

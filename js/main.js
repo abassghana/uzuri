@@ -1,7 +1,7 @@
 var typed = new Typed('#typed', {
     stringsElement: '#typed-strings',
-    backSpeed: 40,
-    typeSpeed: 40,
+    backSpeed: 60,
+    typeSpeed: 60,
     loop: true
 });
 

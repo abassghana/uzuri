@@ -2,8 +2,8 @@
 @import"partials/heroimage";
 @import "partials/variables";
 @import"partials/footer";
+@import"partials/lightbox";
 @import"partials/mixins";
-
 
 @import url('https://fonts.googleapis.com/css?family=Dosis|Expletus+Sans');
 
@@ -26,6 +26,28 @@ label {
     display: none;
     width: 26px;
     float: right;
+}
+
+blockquote {
+    background: $highlight;
+    border-left: 10px solid $navColors;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+    color: white;
+}
+
+blockquote:before {
+    color: $navColors;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+}
+
+blockquote p {
+    display: inline;
 }
 
 
@@ -54,17 +76,28 @@ label {
     width: 30%;
 }
 
+.gallery-title {
+    @include Gallery-title;
+}
+
 .half {
     margin-left: 2%;
     width: 68%;
+    text-align: center;
 }
 
+.bigBox {
+    width: 60%;
+    margin-right: 2%;
+    text-align: center;
+}
 
 .head {
     font-family: 'Expletus Sans', cursive;
     font-size: 20px;
     font-weight: bold;
 }
+
 
 .product_ui {
     text-align: center;
@@ -122,6 +155,12 @@ label {
 .body-title {
 
     @include bodyTile;
+}
+
+.title {
+    @include bodyTile;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .body-content {
@@ -210,6 +249,7 @@ label {
 //media queries begins here
 //tablets
 @media screen and (max-width:768px) {
+
     .third {
         width: 100%;
         text-align: center;
@@ -219,7 +259,9 @@ label {
         width: 80%;
     }
 
-
+    .bigBox {
+        width: 100%;
+    }
 
 }
 
@@ -238,10 +280,15 @@ label {
 
     }
 
+
+
     .footer_container {
         height: 150%;
 
     }
+
+
+
 }
 
 @media screen and (max-width:426px) {
@@ -262,12 +309,34 @@ label {
         font-size: 20px;
     }
 
+    .box {
+        width: 100%;
+    }
 
     .three {
         width: 100%;
     }
 
+    .bigBox {
+        width: 100%;
+    }
 
+    .third {
+        width: 100%;
+    }
+
+    #gallery {
+        margin: auto;
+        text-align: center;
+    }
+
+
+    .allimg {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
 
 }
 
@@ -287,6 +356,17 @@ label {
 
     .body-title {
         font-size: 15px;
+    }
+
+    #gallery {
+        margin: auto;
+        text-align: center;
+    }
+
+    .allimg {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 
 
